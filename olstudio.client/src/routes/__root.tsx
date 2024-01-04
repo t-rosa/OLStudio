@@ -4,7 +4,7 @@ export const Route = new RootRoute({
   component: function Root() {
     return (
       <>
-        root
+        <header className="border-b py-4">root</header>
         <Outlet />
       </>
     );

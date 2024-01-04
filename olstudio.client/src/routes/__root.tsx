@@ -6,7 +6,7 @@ export const Route = new RootRoute({
     return (
       <div className="flex h-full flex-col">
         <header className="flex items-center justify-between border-b py-4 px-4 sm:px-6 lg:px-20 xl:px-24">
-          root
+          <h1 className="font-semibold text-xl">OLStudio</h1>
           <ModeToggle />
         </header>
 

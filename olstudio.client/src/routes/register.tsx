@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { LoginForm } from "@/lib/auth/components/login-form";
+import { RegisterForm } from "@/lib/auth/components/register-form";
 import { FileRoute, Link } from "@tanstack/react-router";
 
-export const Route = new FileRoute('/login').createRoute({
+export const Route = new FileRoute('/register').createRoute({
   component: function Page() {
     return (
       <div className="flex min-h-full flex-1">
@@ -10,19 +10,19 @@ export const Route = new FileRoute('/login').createRoute({
           <div className="mx-auto w-full max-w-sm lg:w-96">
             <div>
               <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight ">
-                Se connecter
+                Créer un compte
               </h2>
               <p className="mt-2 text-sm leading-6">
-                Pas encore inscrit ?&nbsp;
+                Déjà inscrit ?&nbsp;
                 <Button asChild variant="link" className="p-0">
-                  <Link to="/register">Créer un compte</Link>
+                  <Link to="/login">Se connecter</Link>
                 </Button>
               </p>
             </div>
 
             <div className="mt-10">
               <div>
-                <LoginForm />
+                <RegisterForm />
               </div>
             </div>
           </div>

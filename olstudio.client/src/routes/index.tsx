@@ -17,7 +17,7 @@ export const Route = new FileRoute('/').createRoute({
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button asChild>
-                <Link to="/login">Créer un compte</Link>
+                <Link to="/register">Créer un compte</Link>
               </Button>
               <Button asChild variant="secondary">
                 <Link to="/login">Se connecter</Link>

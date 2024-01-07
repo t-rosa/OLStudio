@@ -16,7 +16,8 @@ import * as z from "zod";
 
 const formSchema = z
   .object({
-    name: z.string().min(2).max(50),
+    firstName: z.string().min(2).max(50),
+    lastName: z.string().min(2).max(50),
     email: z.string().email(),
     password: z.string().min(8),
     confirmPassword: z.string().min(8),
@@ -30,7 +31,8 @@ export function RegisterForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
       confirmPassword: "",
@@ -47,12 +49,27 @@ export function RegisterForm() {
         <div>
           <FormField
             control={form.control}
-            name="name"
+            name="firstName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nom</FormLabel>
+                <FormLabel>Prénom</FormLabel>
                 <FormControl>
-                  <Input required placeholder="Thomas Dupont" {...field} />
+                  <Input required placeholder="Prénom" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div>
+          <FormField
+            control={form.control}
+            name="lastName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Nom de famille</FormLabel>
+                <FormControl>
+                  <Input required placeholder="Nom de famille" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
